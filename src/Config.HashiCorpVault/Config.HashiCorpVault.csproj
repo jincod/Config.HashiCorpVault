@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+   <PackageId>Config.HashiCorpVault</PackageId>
+   <PackageVersion>1.0.0-alpha</PackageVersion>
+   <Authors>Vadim Abdrashitov</Authors>
+   <Description>HashiCorp Vault configuration provider implementation for Microsoft.Extensions.Configuration.</Description>
+   <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
+   <PackageProjectUrl>https://github.com/jincod/Config.HashiCorpVault</PackageProjectUrl>
+   <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+   <PackageTags>HashiCorp;Vault;Config.HashiCorpVault</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VaultSharp" Version="0.11.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+  </ItemGroup>
+
+</Project>

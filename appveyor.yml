@@ -1,0 +1,13 @@
+version: 1.0.{build}
+
+image: ubuntu
+
+build_script:
+  - dotnet build
+  - dotnet pack src/Config.HashiCorpVault/Config.HashiCorpVault.csproj --configuration Release --output "${APPVEYOR_BUILD_FOLDER}"
+
+artifacts:
+  - path: '*.nupkg'
+
+after_build:
+  - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }

@@ -33,7 +33,7 @@ namespace Config.HashiCorpVault
 			bool optional
 		)
 		{
-			var client = GetClient(vault, token);
+			var client = GetClient(vault, token, optional);
 			return AddHashiCorpVault(configurationBuilder, client, path, optional);
 		}
 
@@ -49,9 +49,13 @@ namespace Config.HashiCorpVault
 			return configurationBuilder;
 		}
 
-		private static IVaultClient GetClient(string url, string token)
+		private static IVaultClient GetClient(string url, string token, bool optional)
 		{
-			return new VaultClient(new VaultClientSettings(url, new TokenAuthMethodInfo(token)));
+			if (!string.IsNullOrEmpty(url)|| !optional)
+			{
+				return new VaultClient(new VaultClientSettings(url, new TokenAuthMethodInfo(token)));
+			}
+			return null;
 		}
 	}
 }

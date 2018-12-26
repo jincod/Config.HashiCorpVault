@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using VaultSharp;
+using VaultSharp.V1.AuthMethods.AppRole;
 using VaultSharp.V1.AuthMethods.Token;
 
 namespace Config.HashiCorpVault
@@ -39,6 +40,19 @@ namespace Config.HashiCorpVault
 
 		public static IConfigurationBuilder AddHashiCorpVault(
 			this IConfigurationBuilder configurationBuilder,
+			string vault,
+			string roleId,
+			string secretId,
+			string path,
+			bool optional
+		)
+		{
+			var client = GetClient(vault, roleId, secretId, optional);
+			return AddHashiCorpVault(configurationBuilder, client, path, optional);
+		}
+
+		public static IConfigurationBuilder AddHashiCorpVault(
+			this IConfigurationBuilder configurationBuilder,
 			IVaultClient client,
 			string path,
 			bool optional
@@ -51,11 +65,22 @@ namespace Config.HashiCorpVault
 
 		private static IVaultClient GetClient(string url, string token, bool optional)
 		{
-			if (!string.IsNullOrEmpty(url)|| !optional)
+			if (!string.IsNullOrEmpty(url) || !optional)
 			{
 				return new VaultClient(new VaultClientSettings(url, new TokenAuthMethodInfo(token)));
 			}
-			return null;
+
+		    return null;
+		}
+
+		private static IVaultClient GetClient(string url, string roleId, string secretId, bool optional)
+		{
+			if (!string.IsNullOrEmpty(url) || !optional)
+			{
+				return new VaultClient(new VaultClientSettings(url, new AppRoleAuthMethodInfo(roleId, secretId)));
+			}
+
+		    return null;
 		}
 	}
 }

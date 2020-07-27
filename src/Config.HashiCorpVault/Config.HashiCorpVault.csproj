@@ -5,14 +5,15 @@
   </PropertyGroup>
 
   <PropertyGroup>
-   <PackageId>Config.HashiCorpVault</PackageId>
-   <PackageVersion>1.0.3-alpha</PackageVersion>
-   <Authors>Vadim Abdrashitov</Authors>
-   <Description>HashiCorp Vault configuration provider implementation for Microsoft.Extensions.Configuration.</Description>
-   <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
-   <PackageProjectUrl>https://github.com/jincod/Config.HashiCorpVault</PackageProjectUrl>
-   <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-   <PackageTags>HashiCorp;Vault;Config.HashiCorpVault</PackageTags>
+    <PackageId>Config.HashiCorpVault</PackageId>
+    <PackageVersion>1.0.3-alpha</PackageVersion>
+    <Authors>Vadim Abdrashitov</Authors>
+    <Description>HashiCorp Vault configuration provider implementation for Microsoft.Extensions.Configuration.</Description>
+    <PackageProjectUrl>https://github.com/jincod/Config.HashiCorpVault</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jincod/Config.HashiCorpVault</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageTags>HashiCorp;Vault;Config.HashiCorpVault</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

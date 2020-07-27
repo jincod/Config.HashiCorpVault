@@ -6,18 +6,18 @@
 
   <PropertyGroup>
    <PackageId>Config.HashiCorpVault</PackageId>
-   <PackageVersion>1.0.2-alpha</PackageVersion>
+   <PackageVersion>1.0.3-alpha</PackageVersion>
    <Authors>Vadim Abdrashitov</Authors>
    <Description>HashiCorp Vault configuration provider implementation for Microsoft.Extensions.Configuration.</Description>
+   <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
    <PackageProjectUrl>https://github.com/jincod/Config.HashiCorpVault</PackageProjectUrl>
-   <PackageLicense type="MIT" />
    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
    <PackageTags>HashiCorp;Vault;Config.HashiCorpVault</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="VaultSharp" Version="0.11.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="VaultSharp" Version="1.4.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.6" />
   </ItemGroup>
 
 </Project>
